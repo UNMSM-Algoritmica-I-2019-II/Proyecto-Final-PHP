@@ -16,14 +16,14 @@ if (isset($_POST['username']) and isset($_POST['password'])) { //check null
 // Verifica la consulta sql
     $result = mysqli_query($link, $query) or die(mysqli_error($link));
     if ($result == false) {
-        echo 'La consulta falló';
+        echo "La consulta falló";
         exit();
     }
     // Si encontro un match, redirige al PanelUsuario.php 
     if (mysqli_num_rows($result) == 1) {
         header('Location: PanelUsuario.php');
     } else {
-        $err = 'ERROR: Usuario o Contraseña incorrecto';
+        $err = "ERROR: Usuario o Contraseña incorrecto";
     }
     // Muestra el mensaje de error
     echo "$err";
