@@ -1,8 +1,9 @@
 <?php
 include 'conexion.php';
 session_start();
-$link = mysqli_connect($host, $user, $pass) or die("Falló la conexión");
-mysqli_select_db($link, $dbname) or die("Falló la conexión a la base de datos");
+
+$link = mysqli_connect($host, $user, $pass) or die("No puede conectarse");
+mysqli_select_db($link, $dbname) or die("No se puede seleccionar la base de datos");
 
 if (isset($_POST['username']) and isset($_POST['password']) and isset($_POST['cpassword'])) {
     $username = $_POST['username'];
@@ -17,13 +18,13 @@ if (isset($_POST['username']) and isset($_POST['password']) and isset($_POST['cp
         $insert = "INSERT INTO usuario (ID_Username, Password) VALUES ('$username', '$password')";
         $result = mysqli_query($link, $insert) or die(mysqli_error($link));
         if ($result == false) {
-            echo "La consulta falló.";
+            echo "La consulta falló";
             exit();
         } else {
             header('Location: PanelUsuario.php');
         }
     } else {
-        echo "Contraseñas diferentes.";
+        echo "Contraseñas diferentes";
     }
 }
 ?>
