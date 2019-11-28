@@ -33,23 +33,25 @@ if (isset($_POST['username']) and isset($_POST['password'])) { //check null
 <html>
     <head>
         <meta charset="UTF-8">
-        <title></title>
+        <link rel="stylesheet" href="style.css">
+        
     </head>
-    <form action="" method="post">
-        <table>
-            <tr>
-                <td>Usuario</td>
-                <td><input type="text" name="username" required/></td>
-            </tr>
-            <tr>
-                <td>Contraseña</td>
-                <td><input type="text" name="password" required/></td>
-            </tr>
-        </table>
-        <input type="Submit" value="Iniciar Sesión"/>
+    <form action="" method="post" class="loginform">
+        <h1>Sistema de Biblioteca FISI</h1>
+        <div class="txtb">
+            <input type="text" name="username" required>
+            <span data-placeholder="Usuario"></span>
+        </div>
+        <div class="txtb">
+            <input type="text" name="password" required>
+            <span data-placeholder="Contraseña"></span>
+        </div>
+
+        <input type="Submit" class="logbtn" value="Iniciar Sesión"/>
+        <div class="bottom-text">
+            Registrese <a href="NuevoRegistro.php">Clic Aquí</a>
+        </div>
     </form>
-    <form action="NuevoRegistro.php" method="post">
-        <input type="Submit" value="Crear Cuenta"/>
-    </form>
+    
 </body>
 </html>
