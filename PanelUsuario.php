@@ -1,9 +1,7 @@
 <?php
 include 'conexion.php'; 
-
 session_start();  
 $username = $_SESSION['username'];
-	
 ?> 
 
 <!DOCTYPE html>
@@ -14,7 +12,7 @@ $username = $_SESSION['username'];
     </head>
     <body>
         <h2>Panel de Usuario</h2>
-        <form action="BuscaryPedir.php" method="post">
+        <form action="BuscarLibro.php" method="post">
             <input type="submit" value="Buscar Libro"/>
         </form>
 
