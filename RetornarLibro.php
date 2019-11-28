@@ -1,4 +1,11 @@
 <?php
+include 'conexion.php';
+session_start();
+
+$link = mysqli_connect($host, $user, $pass) or die("No puede conectarse");
+mysqli_select_db($link, $dbname) or die("No se puede seleccionar la base de datos");
+
+
 
 ?>
 <!DOCTYPE html>
