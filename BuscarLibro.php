@@ -7,7 +7,7 @@ $username = $_SESSION['username'];
 <html>
     <head>
         <meta charset="UTF-8">
-        <title></title>
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
         <h2>Buscar Libro</h2>

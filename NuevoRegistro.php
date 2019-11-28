@@ -33,7 +33,7 @@ if (isset($_POST['username']) and isset($_POST['password']) and isset($_POST['cp
 <html>
     <head>
         <meta charset="UTF-8">
-        <title></title>
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
         <form action="" method="post">
