@@ -10,30 +10,24 @@ $username = $_SESSION['username'];
 $idlibro = $_POST['idlibro'];
 
 $query = "UPDATE prestamo SET Retornado = 1 where ID_ISBN = '$idlibro'";
-    
-        $result = mysqli_query ($link, $query) or die(mysqli_error($link));  
-            if($result == false)
-            {
-                    echo "La consulta falló";
-                    exit();
-            } else {
-				echo "se actualizo prestamo";
-			}
+
+$result = mysqli_query($link, $query) or die(mysqli_error($link));
+if ($result == false) {
+    echo "La consulta falló";
+    exit();
+/*} else {
+    echo "se actualizo prestamo";
+}*/
 
 $query2 = "UPDATE libro SET EnPrestamo = 0 where ID_ISBN = '$idlibro'";
-$result2 = mysqli_query ($link, $query2) or die(mysqli_error($link));  
-            if($result2 == false)
-            {
-                    echo "La consulta falló";
-                    exit();
-            } else {
-				echo "se actualizo libro";
-				$exito = "libro retornado con exito";
-			}
-
-			
-			
-//$query = "";
+$result2 = mysqli_query($link, $query2) or die(mysqli_error($link));
+if ($result2 == false) {
+    echo "La consulta falló";
+    exit();
+} else {
+    echo "se actualizo libro";
+    $exito = "Libro retornado con exito";
+}
 ?>
 
 <!DOCTYPE html>
