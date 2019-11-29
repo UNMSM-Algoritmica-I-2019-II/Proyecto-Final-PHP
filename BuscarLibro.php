@@ -19,7 +19,7 @@ $username = $_SESSION['username'];
                 </tr>
                 <tr>
                     <td>Título</td>
-                    <td><input type="text" name="password"/></td>
+                    <td><input type="text" name="titulo"/></td>
                 </tr>
                 <tr>
                     <td>Autor</td>
