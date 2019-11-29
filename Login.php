@@ -34,24 +34,27 @@ if (isset($_POST['username']) and isset($_POST['password'])) { //check null
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="style.css">
-        
+        <title>Iniciar Sesión Biblioteca FISI</title>
     </head>
-    <form action="" method="post" class="loginform">
-        <h1>Sistema de Biblioteca FISI</h1>
-        <div class="txtb">
-            <input type="text" name="username" required>
-            <span data-placeholder="Usuario"></span>
-        </div>
-        <div class="txtb">
-            <input type="text" name="password" required>
-            <span data-placeholder="Contraseña"></span>
-        </div>
+    <body>
+        <form action="" method="post" class="loginform">
+            <h1>Sistema de Biblioteca FISI</h1>
+            
+            <div class="txtb">
+                <input type="text" name="username" required>
+                <span data-placeholder="Usuario"></span>
+            </div>
+            
+            <div class="txtb">
+                <input type="text" name="password" required>
+                <span data-placeholder="Contraseña"></span>
+            </div>
 
-        <input type="Submit" class="logbtn" value="Iniciar Sesión"/>
-        <div class="bottom-text">
-            Registrese <a href="NuevoRegistro.php">Clic Aquí</a>
-        </div>
-    </form>
-    
-</body>
+            <input type="Submit" class="logbtn" value="Iniciar Sesión"/>
+            
+            <div class="bottom-text">
+                Registrese <a href="NuevoRegistro.php">Clic Aquí</a>
+            </div>
+        </form>
+    </body>
 </html>
