@@ -10,7 +10,7 @@ mysqli_select_db($link, $dbname) or die("No se puede seleccionar la base de dato
 if ($_POST['isbn'] != null) {
     $isbn = $_POST['isbn'];
     // SQL query
-    $query1 = "Select ID_ISBN, Titulo, Autor From libro Where Id_ISBN = '$isbn' AND EnPrestamo = 0";
+    $query1 = "Select ID_ISBN, Titulo, Autor From libro Where Id_ISBN like '%".$isbn."%' AND EnPrestamo = 0";
     // Realizar consulta en BBDD
     $result1 = mysqli_query($link, $query1) or die(mysqli_error($link));
     if ($result1 == false) {
@@ -19,7 +19,7 @@ if ($_POST['isbn'] != null) {
     }
 } elseif ($_POST['titulo'] != null) {
     $titulo = $_POST['titulo'];
-    $query1 = "Select ID_ISBN, Titulo, Autor From libro Where Titulo = '$titulo' AND EnPrestamo = 0";
+    $query1 = "Select ID_ISBN, Titulo, Autor From libro Where Titulo like '%".$titulo."%' AND EnPrestamo = 0";
     $result1 = mysqli_query($link, $query1) or die(mysqli_error($link));
     if ($result1 == false) {
         echo "La consulta por Título falló";
@@ -27,7 +27,7 @@ if ($_POST['isbn'] != null) {
     }
 } elseif ($_POST['autor'] != null) {
     $autor = $_POST['autor'];
-    $query1 = "Select ID_ISBN, Titulo, Autor From libro Where Autor = '$autor' AND EnPrestamo = 0";
+    $query1 = "Select ID_ISBN, Titulo, Autor From libro Where Autor like '%".$autor."%' AND EnPrestamo = 0";
     $result1 = mysqli_query($link, $query1) or die(mysqli_error($link));
     if ($result1 == false) {
         echo "La consulta por Autor falló";
@@ -46,28 +46,33 @@ if ($numrow == 0) {
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
+		
         <table>
             <tr>
                 <th>ISBN</th>
                 <th>Título</th>
                 <th>Autor</th>
+				<th>Reserva</th>
+				</tr>
                 <?php
-                while ($row = mysqli_fetch_array($result1, MYSQLI_ASSOC)) {
-                    $isbn = $row['ID_ISBN'];
-                    $titulo = $row['Titulo'];
-                    $autor = $row['Autor'];
-                }
-                ?>
-            </tr>
-            <tr>
-                <td><?php echo $isbn; ?></td>
-                <td><?php echo $titulo; ?></td>
-                <td><?php echo $autor; ?></td>
+                while ($row = mysqli_fetch_array($result1, MYSQLI_ASSOC)) { 
+				?>
+				<form action="ReservaLibro.php" method="post">
+				<tr>
+				<td><?php echo $row['ID_ISBN']; ?></td>
+                <td><?php echo $row['Titulo']; ?></td>
+                <td><?php echo $row['Autor']; ?></td>
+				<input type="hidden" name="idlibro" value = "<?php echo $row['ID_ISBN'];?>" />
+				<td><input type="Submit" value="Reservar" /></td>
+				</form>
+				</tr>
                 
-            </tr>
+				<?php } ?>
+                
+            
         </table>
-
-        <form action="PanelUsuario.php" method="post">
+		
+			<form action="PanelUsuario.php" method="post">
             <input type="submit" value="Regresar"/>
         </form>
     </body>
