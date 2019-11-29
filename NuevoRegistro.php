@@ -32,12 +32,13 @@ if (isset($_POST['username']) and isset($_POST['password']) and isset($_POST['cp
 <html>
     <head>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="NuevoRegistro.css">
         <title>Registro</title>
     </head>
     <body>
-        <form action="" method="post">
+        <form action="" method="post" class="regform">
             <table>
+                <h2>REGISTRO</h2>
                 <tr>
                     <td>Usuario</td>
                     <td><input type="text" name="username" required/></td>
@@ -51,7 +52,7 @@ if (isset($_POST['username']) and isset($_POST['password']) and isset($_POST['cp
                     <td><input type="text" name="cpassword" required/></td>
                 </tr>
             </table>
-            <input type="Submit" value="Registrar"/>
+            <input type="Submit" class="regbtn" value="Registrar"/>
         </form>
         <form action="Login.php" method="post">
             <input type="Submit" value="Regresar"/>
