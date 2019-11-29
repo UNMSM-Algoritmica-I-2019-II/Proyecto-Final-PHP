@@ -16,10 +16,6 @@ $username = $_SESSION['username'];
             <input type="submit" value="Buscar Libro"/>
         </form>
         
-        <form action="PedirLibro.php" method="post">
-            <input type="submit" value="Pedir Libro"/>
-        </form>
-
         <form action="RetornarLibro.php" method="post">
             <input type="submit" value="Retornar Libro"/>
         </form>

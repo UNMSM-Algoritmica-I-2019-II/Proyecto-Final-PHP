@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 28-11-2019 a las 22:59:25
+-- Tiempo de generación: 29-11-2019 a las 08:55:32
 -- Versión del servidor: 10.4.8-MariaDB
 -- Versión de PHP: 7.3.11
 
@@ -41,11 +41,13 @@ CREATE TABLE `libro` (
 
 INSERT INTO `libro` (`ID_ISBN`, `Titulo`, `Autor`, `EnPrestamo`) VALUES
 ('01111', 'Programación en C', 'Ignacio Zahonero - Joyanes Luis', 0),
-('01122', 'Libro prueba', 'Alan', 0),
+('01122', 'Algebra Lineal: Una Introduccion Moderna', 'David Poole', 0),
 ('02222', 'Fundamentos de programación', 'Luis Joyanes Aguilar', 0),
 ('03333', 'Fundamentos de Álgebra Lineal', 'Ron Larson  ', 0),
+('03344', 'Calculo Diferencial E Integral', 'Yboon García', 0),
 ('04444', 'Tópicos de Cálculo', 'Máximo Mitacc - Luis Toro', 0),
 ('05555', 'Economía', 'Michael Parking Pearson', 0),
+('06611', 'Python 3. Los fundamentos del lenguaje', 'Sébastien Chazallet', 0),
 ('06666', 'Python para todos', 'Raúl González Duque', 0);
 
 -- --------------------------------------------------------
@@ -68,9 +70,18 @@ CREATE TABLE `prestamo` (
 
 INSERT INTO `prestamo` (`ID_ISBN`, `ID_Username`, `FechaSalida`, `FechaRetorno`, `Retornado`) VALUES
 ('01122', 'josue123', '2019-11-28', '2019-12-03', 1),
+('03333', 'lucas123', '2019-11-29', '2019-12-04', 1),
 ('04444', 'josue123', '2019-11-28', '2019-12-03', 1),
 ('05555', 'josue123', '2019-11-28', '2019-12-03', 1),
-('06666', 'yopi123', '2019-11-28', '2019-12-03', 1);
+('06666', 'yopi123', '2019-11-28', '2019-12-03', 1),
+('01122', 'josue123', '2019-11-29', '2019-12-04', 1),
+('01111', 'alex123', '2019-11-29', '2019-12-04', 1),
+('01111', 'josue123', '2019-11-29', '2019-12-04', 1),
+('01122', 'josue123', '2019-11-29', '2019-12-04', 1),
+('01111', 'josue123', '2019-11-29', '2019-12-04', 1),
+('06666', 'josue123', '2019-11-29', '2019-12-04', 1),
+('01122', 'josue123', '2019-11-29', '2019-12-04', 1),
+('06666', 'maria123', '2019-11-29', '2019-12-04', 1);
 
 -- --------------------------------------------------------
 
@@ -92,6 +103,8 @@ INSERT INTO `usuario` (`ID_Username`, `Password`) VALUES
 ('elian123', 'elian'),
 ('josue123', 'josue'),
 ('lucas123', 'lucas'),
+('marco123', 'marco'),
+('maria123', 'maria'),
 ('yopi123', 'yopi');
 
 --
@@ -102,12 +115,6 @@ INSERT INTO `usuario` (`ID_Username`, `Password`) VALUES
 -- Indices de la tabla `libro`
 --
 ALTER TABLE `libro`
-  ADD PRIMARY KEY (`ID_ISBN`);
-
---
--- Indices de la tabla `prestamo`
---
-ALTER TABLE `prestamo`
   ADD PRIMARY KEY (`ID_ISBN`);
 
 --

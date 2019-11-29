@@ -15,7 +15,7 @@ $result = mysqli_query($link, $query) or die(mysqli_error($link));
 if ($result == false) {
     echo "La consulta falló";
     exit();
-/*} else {
+}/* else {
     echo "se actualizo prestamo";
 }*/
 
@@ -29,7 +29,6 @@ if ($result2 == false) {
     $exito = "Libro retornado con exito";
 }
 ?>
-
 <!DOCTYPE html>
 <html>
     <head>
